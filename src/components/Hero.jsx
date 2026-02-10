@@ -14,7 +14,7 @@ export default function Hero() {
   const [playerId, setPlayerId] = useState("");
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-12 mt-60">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* LEFT IMAGE */}
         <div className="w-full">
