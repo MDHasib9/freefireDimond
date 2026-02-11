@@ -131,7 +131,7 @@ export default function Home() {
               to="/diamonds"
               className="bg-white p-8 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              <div className="text-4xl mb-4">💎</div>
+              <div className="text-4xl mb-4"> <img src="dimond.png" alt="" /></div>
               <h4 className="font-bold text-lg text-gray-900">Diamonds</h4>
               <p className="text-gray-600 text-sm mt-2">In-game currency</p>
             </Link>
@@ -140,8 +140,8 @@ export default function Home() {
               to="/evo-guns"
               className="bg-white p-8 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              <div className="text-4xl mb-4">🔫</div>
-              <h4 className="font-bold text-lg text-gray-900">Evo Guns</h4>
+              <div className="text-4xl mb-4"> <img className='rounded-4xl' src="evoguns.jpg" alt="" /></div>
+              <h4 className="font-bold text-lg text-gray-900"> Permanent Evo Guns</h4>
               <p className="text-gray-600 text-sm mt-2">Powerful weapons</p>
             </Link>
             
@@ -149,7 +149,7 @@ export default function Home() {
               to="/clothing"
               className="bg-white p-8 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              <div className="text-4xl mb-4">👕</div>
+              <div className="text-4xl mb-4"><img  className='rounded-4xl' src="bundiles.jpg" alt="" /></div>
               <h4 className="font-bold text-lg text-gray-900">Clothing</h4>
               <p className="text-gray-600 text-sm mt-2">Character skins</p>
             </Link>

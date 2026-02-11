@@ -1,9 +1,9 @@
-import products from '../data/products';
-import ProductCard from '../components/ProductCard';
+import products from "../data/products";
+import ProductCard from "../components/ProductCard";
 
 export default function Diamonds() {
   const diamondProducts = products.filter(
-    (product) => product.category === 'diamonds'
+    (product) => product.category === "diamonds",
   );
 
   return (

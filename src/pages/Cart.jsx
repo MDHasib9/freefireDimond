@@ -217,7 +217,7 @@ export default function Cart() {
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                       >
-                        <span className="text-4xl">📱</span>
+                        <span className="text-4xl"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_-MTKeBKVsB2RoYcbrm3OCwVSK_8Ux0bOzg&s" alt="" /></span>
                         <div className="text-left">
                           <div className="font-semibold">bKash</div>
                           <div className="text-xs text-gray-500">Mobile Banking</div>
@@ -233,7 +233,7 @@ export default function Cart() {
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                       >
-                        <span className="text-4xl">📱</span>
+                        <span className="text-4xl">  <img src="https://freelogopng.com/images/all_img/1679248787Nagad-Logo.png" alt="" /> </span>
                         <div className="text-left">
                           <div className="font-semibold">Nagad</div>
                           <div className="text-xs text-gray-500">Mobile Banking</div>
