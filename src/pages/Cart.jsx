@@ -55,24 +55,24 @@ export default function Cart() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 ">
       <h1 className="text-4xl font-bold text-gray-800 mb-8">Your Cart</h1>
 
       {cartItems.length === 0 ? (
-        <div className="text-center py-20 bg-white border border-gray-100 rounded-2xl">
-          <div className="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+        <div className="text-center py-20  border border-gray-100  rounded-2xl">
+          <div className="mx-auto w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center mb-6">
             🛒
           </div>
-          <p className="text-lg text-gray-600 mb-8">Your shopping cart is empty</p>
+          <p className="text-lg text-gray-200 mb-8">Your shopping cart is empty</p>
           <Link
             to="/diamonds"
-            className="inline-block bg-primary text-primary-foreground px-10 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
+            className="inline-block bg-primary bg-[#7851A9] text-white hover: text-primary-foreground px-10 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
           >
             Browse Diamonds &amp; More
           </Link>
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1  lg:grid-cols-3 gap-10">
           {/* Cart Items */}
           <div className="lg:col-span-2">
             <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
@@ -86,97 +86,157 @@ export default function Cart() {
                   parseFloat(discountedUnitPrice) * item.quantity
                 ).toFixed(2);
 
-                return (
-                  <div
-                    key={item.id}
-                    className="flex gap-6 p-6 border-b border-gray-100 last:border-0"
-                  >
-                    {/* Image */}
-                    <div className="w-28 h-28 flex-shrink-0 overflow-hidden rounded-xl border bg-gray-50">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
+               
+                  // ---------------------
 
-                    {/* Details */}
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-lg leading-tight text-gray-900 line-clamp-2 mb-2">
-                        {item.name}
-                      </h3>
 
-                      <div className="flex items-center gap-4">
-                        {item.discount > 0 ? (
-                          <>
-                            <span className="text-2xl font-bold text-red-600">
-                              ${discountedUnitPrice}
-                            </span>
-                            <span className="text-lg text-gray-400 line-through">
-                              ${item.price.toFixed(2)}
-                            </span>
-                            <span className="text-xs bg-red-600 text-white px-2.5 py-1 rounded font-bold">
-                              -{item.discount}%
-                            </span>
-                          </>
-                        ) : (
-                          <span className="text-2xl font-bold text-gray-900">
-                            ${item.price.toFixed(2)}
-                          </span>
-                        )}
-                      </div>
-                    </div>
 
-                    {/* Quantity */}
-                    <div className="flex flex-col items-center">
-                      <div className="border border-gray-300 rounded-xl flex items-center overflow-hidden">
-                        <button
-                          onClick={() => decreaseQuantity(item.id)}
-                          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
-                        >
-                          −
-                        </button>
-                        <div className="w-12 text-center font-semibold text-lg border-x border-gray-300">
-                          {item.quantity}
-                        </div>
-                        <button
-                          onClick={() => increaseQuantity(item.id)}
-                          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
+return (
+  <div
+    key={item.id}
+    className="flex flex-col sm:flex-row gap-6 p-5 sm:p-6 border-b border-gray-200 last:border-0 bg-white hover:bg-gray-50 transition"
+  >
+    {/* Image */}
+    <div className="w-full sm:w-28 h-40 sm:h-28 flex-shrink-0 overflow-hidden rounded-2xl border">
+      <img
+        src={item.image}
+        alt={item.name}
+        className="h-full w-full object-cover"
+      />
+    </div>
 
-                    {/* Item Total */}
-                    <div className="w-28 flex-shrink-0 text-right">
-                      <div className="font-semibold text-xl text-gray-900">
-                        ${itemTotal}
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">
-                        {item.quantity} × ${discountedUnitPrice}
-                      </div>
-                    </div>
+    {/* Middle Section */}
+    <div className="flex-1 flex flex-col justify-between">
+      {/* Title */}
+      <h3 className="font-semibold text-base sm:text-lg text-gray-900 line-clamp-2">
+        {item.name}
+      </h3>
 
-                    {/* Remove */}
-                    <button
-                      onClick={() => removeFromCart(item.id)}
-                      className="text-red-500 hover:text-red-700 transition-colors self-start mt-1 text-sm font-medium"
-                    >
-                      Remove
-                    </button>
-                  </div>
-                );
+      {/* Price */}
+      <div className="flex flex-wrap items-center gap-3 mt-3">
+        {item.discount > 0 ? (
+          <>
+            <span className="text-xl sm:text-2xl font-bold text-gray-900">
+              ${discountedUnitPrice}
+            </span>
+            <span className="text-sm sm:text-base text-gray-400 line-through">
+              ${item.price.toFixed(2)}
+            </span>
+            <span className="text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
+              -{item.discount}%
+            </span>
+          </>
+        ) : (
+          <span className="text-xl sm:text-2xl font-bold text-gray-900">
+            ${item.price.toFixed(2)}
+          </span>
+        )}
+      </div>
+
+      {/* Mobile Bottom Section */}
+      <div className="flex items-center justify-between mt-4 sm:hidden">
+        {/* Quantity */}
+        <div className="border border-gray-300 rounded-xl flex items-center overflow-hidden">
+          <button
+            onClick={() => decreaseQuantity(item.id)}
+            className="w-9 h-9 flex items-center justify-center text-lg text-gray-600 hover:bg-gray-100"
+          >
+            −
+          </button>
+          <div className="w-10 text-center font-semibold text-base border-x border-gray-300">
+            {item.quantity}
+          </div>
+          <button
+            onClick={() => increaseQuantity(item.id)}
+            className="w-9 h-9 flex items-center justify-center text-lg text-gray-600 hover:bg-gray-100"
+          >
+            +
+          </button>
+        </div>
+
+        {/* Total */}
+        <div className="text-right">
+          <div className="font-semibold text-lg text-gray-900">
+            ${itemTotal}
+          </div>
+          <div className="text-xs text-gray-500">
+            {item.quantity} × ${discountedUnitPrice}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Desktop Right Section */}
+    <div className="hidden sm:flex flex-col items-end justify-between">
+      {/* Quantity */}
+      <div className="border border-gray-300 rounded-xl flex items-center overflow-hidden">
+        <button
+          onClick={() => decreaseQuantity(item.id)}
+          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
+        >
+          −
+        </button>
+        <div className="w-12 text-center font-semibold text-lg border-x border-gray-300">
+          {item.quantity}
+        </div>
+        <button
+          onClick={() => increaseQuantity(item.id)}
+          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
+        >
+          +
+        </button>
+      </div>
+
+      {/* Total */}
+      <div className="text-right mt-4">
+        <div className="font-semibold text-xl text-gray-900">
+          ${itemTotal}
+        </div>
+        <div className="text-xs text-gray-500">
+          {item.quantity} × ${discountedUnitPrice}
+        </div>
+      </div>
+
+      {/* Remove */}
+      <button
+        onClick={() => removeFromCart(item.id)}
+        className="text-sm font-medium text-gray-500 hover:text-red-600 transition mt-4"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //  --------------------------------------------- 
+
               })}
             </div>
           </div>
 
           {/* Order Summary + Payment Form */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1  ">
             <div className="bg-white border border-gray-200 rounded-3xl p-8 sticky top-8">
               <h2 className="text-2xl font-semibold mb-6">Order Summary</h2>
 
-              <div className="space-y-5">
+              <div className="space-y-5   ">
                 <div className="flex justify-between text-gray-600">
                   <span>Subtotal</span>
                   <span className="font-medium">${subtotal}</span>
@@ -203,7 +263,7 @@ export default function Cart() {
 
                 <div className="space-y-6">
                   {/* Payment Method */}
-                  <div>
+                  <div className='' >
                     <p className="text-sm font-medium text-gray-700 mb-3">
                       Choose Payment Method
                     </p>
@@ -256,8 +316,8 @@ export default function Cart() {
                   </div>
 
                   {/* Sender Phone */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div >
+                    <label className="block text-sm font-medium  text-gray-700 mb-2">
                       Your Phone Number (Sender)
                     </label>
                     <input

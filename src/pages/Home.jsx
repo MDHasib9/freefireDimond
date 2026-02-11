@@ -14,9 +14,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container relative mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-              Welcome to <span className="text-yellow-300">Free Fire</span>{" "}
-              Store
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+              <span className="bg-red-500 text-blue-200" >Welcome to</span>
+               <span className="text-white">Free Fire</span>
+               <span className="bg-blue-400 text-amber-300" > Store</span>
+              
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
               Get exclusive diamonds, powerful weapons, and premium clothing to
@@ -31,7 +33,10 @@ export default function Home() {
               </Link>
               <Link
                 to="/evo-guns"
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300 hover:scale-105"
+                className="bg-blue-500/50 text-white border-2 border-white  px-8
+                
+                py-4 rounded-xl font-bold text-lg hover:bg-white
+                 hover:text-purple-600 transition-all duration-300 hover:scale-105"
               >
                 🔫 View Weapons
               </Link>
