@@ -71,7 +71,7 @@ const products = [
     price: 49.99,
     discount: 20,
     image:
-      "https://via.placeholder.com/400x400/e74c3c/ffffff?text=Galactic+Storm",
+      "m1887.png",
     category: "evo-guns",
   },
   {
@@ -80,7 +80,7 @@ const products = [
     price: 44.99,
     discount: 0,
     image:
-      "https://via.placeholder.com/400x400/e74c3c/ffffff?text=Neon+Phantom",
+      "mp40.png",
     category: "evo-guns",
   },
   {
@@ -89,7 +89,7 @@ const products = [
     price: 59.99,
     discount: 0,
     image:
-      "https://via.placeholder.com/400x400/e74c3c/ffffff?text=Crystal+Guardian",
+      "udpaker.png",
     category: "evo-guns",
   },
   {
@@ -98,7 +98,7 @@ const products = [
     price: 34.99,
     discount: 25,
     image:
-      "https://via.placeholder.com/400x400/e74c3c/ffffff?text=Cyberpunk+Edge",
+      "ump.png",
     category: "evo-guns",
   },
 

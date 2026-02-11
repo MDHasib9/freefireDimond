@@ -15,7 +15,7 @@ function App() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
 
-      <main className="grow">
+      <main className="grow bg-[#898989]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/diamonds" element={<Diamonds />} />
