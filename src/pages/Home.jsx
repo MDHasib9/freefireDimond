@@ -15,10 +15,9 @@ export default function Home() {
         <div className="container relative mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
-              <span className="bg-red-500 text-blue-200" >Welcome to</span>
-               <span className="text-white">Free Fire</span>
-               <span className="bg-blue-400 text-amber-300" > Store</span>
-              
+              <span className="bg-red-500 text-blue-200">Welcome to</span>
+              <span className="text-white">Free Fire</span>
+              <span className="bg-blue-400 text-amber-300"> Store</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
               Get exclusive diamonds, powerful weapons, and premium clothing to
@@ -27,6 +26,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/diamonds"
+
                 className="bg-white text-purple-600 px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/30"
               >
                 ⚡ Shop Diamonds
@@ -45,7 +45,6 @@ export default function Home() {
         </div>
 
         {/* Decorative elements */}
-      
       </section>
 
       {/* Featured Products - Improved */}
@@ -123,12 +122,13 @@ export default function Home() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <div className="text-center  mt-16">
           <Link
             to="/diamonds"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300"
+            className="inline-flex bg-red-300/30 border-2 items-center gap-3  from-purple-600 to-blue-600
+             text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300"
           >
-            <span>🎮 Browse All Products</span>
+            <span className="" >🎮 Browse All Products</span>
             <svg
               className="w-5 h-5"
               fill="none"
@@ -155,7 +155,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <Link
               to="/diamonds"
-              className="bg-white p-8 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="bg-white p-3 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <div className="text-4xl mb-4">
                 {" "}
@@ -167,7 +167,7 @@ export default function Home() {
 
             <Link
               to="/evo-guns"
-              className="bg-white p-8 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="bg-white p-3 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <div className="text-4xl mb-4">
                 {" "}
@@ -182,7 +182,7 @@ export default function Home() {
 
             <Link
               to="/clothing"
-              className="bg-white p-8 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="bg-white p-3 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <div className="text-4xl mb-4">
                 <img className="rounded-4xl" src="bundiles.jpg" alt="" />
@@ -193,7 +193,7 @@ export default function Home() {
 
             <Link
               to="/cart"
-              className="bg-white p-8 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="bg-white p-3 rounded-2xl text-center shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <div className="text-4xl mb-4">
                 {" "}
