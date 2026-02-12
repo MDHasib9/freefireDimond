@@ -3,7 +3,7 @@ const products = [
   {
     id: "d1",
     name: " 850 + 100 Bonus",
-    price: 532,
+    price: 582,
     discount: 20,
     image:
       "https://res.cloudinary.com/rivalry/image/fetch/q_50/https%3A%2F%2Fimages.prismic.io%2Frivalryglhf%2FZo0YzB5LeNNTw7xf_FreeFireDiamonds.jpg%3Fauto%3Dformat%2Ccompress",
@@ -12,7 +12,7 @@ const products = [
   {
     id: "d2",
     name: "1480 + 355 Bonus",
-    price: 645,
+    price: 795,
     discount: 30,
     image:
       "https://res.cloudinary.com/rivalry/image/fetch/q_50/https%3A%2F%2Fimages.prismic.io%2Frivalryglhf%2FZo0YzB5LeNNTw7xf_FreeFireDiamonds.jpg%3Fauto%3Dformat%2Ccompress",
@@ -60,7 +60,7 @@ const products = [
   {
     id: "e1",
     name: "Legendary Evo Gun Skin - Dragon Blaze",
-    price: 39.99,
+    price: 4050.99,
     discount: 0,
     image: "ak47image.jpg",
     category: "evo-guns",
@@ -68,7 +68,7 @@ const products = [
   {
     id: "e2",
     name: "Evo M1887 - Galactic Storm",
-    price: 49.99,
+    price: 4900.99,
     discount: 20,
     image:
       "m1887.png",
@@ -77,7 +77,7 @@ const products = [
   {
     id: "e3",
     name: "Evo Groza - Neon Phantom",
-    price: 44.99,
+    price: 4600.99,
     discount: 0,
     image:
       "mp40.png",
@@ -86,7 +86,7 @@ const products = [
   {
     id: "e4",
     name: "Evo AWM - Crystal Guardian",
-    price: 59.99,
+    price: 5709.99,
     discount: 0,
     image:
       "udpaker.png",
@@ -95,7 +95,7 @@ const products = [
   {
     id: "e5",
     name: "Evo MP40 - Cyberpunk Edge",
-    price: 34.99,
+    price: 3604.99,
     discount: 25,
     image:
       "ump.png",

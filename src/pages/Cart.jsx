@@ -22,8 +22,8 @@ export default function Cart() {
   const [senderPhone, setSenderPhone] = useState('');
   const [transactionId, setTransactionId] = useState('');
 
-  const bKashNumber = '01312 345678';
-  const nagadNumber = '01911 234567';
+  const bKashNumber = '017600 96087';
+  const nagadNumber = '017600 96087';
 
   // Form validation
   const isFormValid =
