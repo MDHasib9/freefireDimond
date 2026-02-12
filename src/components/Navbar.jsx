@@ -113,12 +113,12 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg hover:bg-gray-100  text-white  transition-colors"
+              className="p-2 rounded-lg hover:text-black hover:bg-gray-100  text-white  transition-colors"
             >
               {isMobileMenuOpen ? (
                 // -------------------------
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 "
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ export default function Navbar() {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <Menu />
+                  <Menu className="" />
                 </svg>
               )}
             </button>
@@ -150,7 +150,7 @@ export default function Navbar() {
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                     location.pathname === item.path
                       ? "bg-blue-50 text-blue-600 border-l-4 border-blue-600"
-                      : "text-gray-300 hover:bg-gray-50"
+                      : "text-gray-300 hover:bg-gray-500"
                   }`}
                 >
                   <span className="text-xl ">{item.icon}</span>
@@ -158,9 +158,7 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              <div className="px-4 text-xs text-gray-400 text-center pt-4">
-                <p>© 2026 Free Fire Store. All rights reserved.</p>
-              </div>
+            
             </div>
           </div>
         )}

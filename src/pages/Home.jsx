@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import products from "../data/products";
+import { Gem, Swords } from "lucide-react";
 
 export default function Home() {
   const featured = products.slice(0, 6);
@@ -14,31 +15,50 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container relative mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
-              <span className="bg-red-500 text-blue-200">Welcome to</span>
-              <span className="text-white">Free Fire</span>
-              <span className="bg-blue-400 text-amber-300"> Store</span>
+            <h1 className="text-4xl md:text-6xl font-black tracking-tight text-center relative">
+              <span className="text-gray-300">Welcome to </span>
+
+              <span className="relative">
+                <span
+                  className="absolute inset-0 
+                     bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 
+                     blur-xl opacity-70"
+                ></span>
+
+                <span
+                  className="relative bg-gradient-to-r  text-black from-red-500 via-orange-500 to-yellow-500 
+                     bg-clip-text 
+                     drop-shadow-[0_0_25px_rgba(255,80,0,0.8)]"
+                >
+                  Free Fire
+                </span>
+              </span>
+
+              <span className="text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+                {" "}
+                Store
+              </span>
             </h1>
+
             <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
               Get exclusive diamonds, powerful weapons, and premium clothing to
               dominate the battlefield
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center items-center sm:flex-row gap-4 ">
               <Link
                 to="/diamonds"
-
-                className="bg-white text-purple-600 px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/30"
+                className="bg-[#B9F2FF] border-2 text-[#BF00FF ] flex  px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/30"
               >
-                ⚡ Shop Diamonds
+                <Gem className="mt-1 mr-1 text-blue-500" /> Shop Diamonds
               </Link>
               <Link
                 to="/evo-guns"
-                className="bg-blue-500/50 text-white border-2 border-white  px-8
-                
+                className=" flex text-white text-center border-2 border-white  px-8
+                   bg-amber-500/60
                 py-4 rounded-xl font-bold text-lg hover:bg-white
                  hover:text-purple-600 transition-all duration-300 hover:scale-105"
               >
-                🔫 View Weapons
+                <Swords className="text-red-500" /> View Weapons
               </Link>
             </div>
           </div>
@@ -128,7 +148,7 @@ export default function Home() {
             className="inline-flex bg-red-300/30 border-2 items-center gap-3  from-purple-600 to-blue-600
              text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transform transition-all duration-300"
           >
-            <span className="" >🎮 Browse All Products</span>
+            <span className="">🎮 Browse All Products</span>
             <svg
               className="w-5 h-5"
               fill="none"
