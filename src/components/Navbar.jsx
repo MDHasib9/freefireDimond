@@ -1,6 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import {Swords, Gem, House, Shirt} from 'lucide-react'
+
+
 
 export default function Navbar() {
   const location = useLocation();
@@ -8,10 +11,10 @@ export default function Navbar() {
   const [cartItems] = useState(3); // Example cart count
 
   const navItems = [
-    { path: "/", label: "Home", icon: "🏠" },
-    { path: "/diamonds", label: "Diamonds", icon: "💎" },
-    { path: "/evo-guns", label: "Weapons", icon: "🔫" },
-    { path: "/clothing", label: "Clothing", icon: "👕" },
+    { path: "/", label: "Home", icon: <House /> },
+    { path: "/diamonds", label: "Diamonds", icon: <Gem /> },
+    { path: "/evo-guns", label: "Weapons", icon: <Swords /> },
+    { path: "/clothing", label: "Clothing", icon: <Shirt /> },
   ];
 
   // Close mobile menu when route changes
@@ -26,10 +29,12 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">FF</span>
+              
+              <div className="h-15 w-15  " >
+                <img className="rounded-full" src="ff.jpeg" alt="" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r
+               from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Free Fire
               </span>
             </Link>
