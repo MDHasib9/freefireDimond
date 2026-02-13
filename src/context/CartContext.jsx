@@ -75,9 +75,9 @@ export function CartProvider({ children }) {
     );
 
     return {
-      subtotal: Number(calculations.subtotal.toFixed(2)),
-      totalDiscount: Number(calculations.totalDiscount.toFixed(2)),
-      total: Number(calculations.total.toFixed(2)),
+      subtotal: Number(calculations.subtotal.toFixed(0)),
+      totalDiscount: Number(calculations.totalDiscount.toFixed(0)),
+      total: Number(calculations.total.toFixed(0)),
     };
   }, [cartItems]);
 

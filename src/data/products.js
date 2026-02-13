@@ -3,8 +3,8 @@ const products = [
   {
     id: "d1",
     name: " 850 + 100 Bonus",
-    price: 582,
-    discount: 20,
+    price: 587.34,
+    discount: 21,
     image:
       "https://res.cloudinary.com/rivalry/image/fetch/q_50/https%3A%2F%2Fimages.prismic.io%2Frivalryglhf%2FZo0YzB5LeNNTw7xf_FreeFireDiamonds.jpg%3Fauto%3Dformat%2Ccompress",
     category: "diamonds",
@@ -40,8 +40,8 @@ const products = [
   {
     id: "d3",
     name: "Monthly Membership",
-    price: 620,
-    discount: 32,
+    price: 821,
+    discount: 22,
     image:
       "https://www.bdgameghor.net/wp-content/uploads/2022/05/Free-Fire-Monthly-Membership-BD-2.webp",
     category: "diamonds",
@@ -70,8 +70,7 @@ const products = [
     name: "EVO GUN M1887- Sterling Conqueror",
     price: 4900.99,
     discount: 20,
-    image:
-      "m1887.png",
+    image: "m1887.png",
     category: "evo-guns",
   },
   {
@@ -79,8 +78,7 @@ const products = [
     name: "EVO  MP40 - Predatory Cobra. ",
     price: 4600.99,
     discount: 0,
-    image:
-      "mp40.png",
+    image: "mp40.png",
     category: "evo-guns",
   },
   {
@@ -88,8 +86,7 @@ const products = [
     name: "EVO AWM - Crystal Guardian",
     price: 5709.99,
     discount: 0,
-    image:
-      "udpaker.png",
+    image: "udpaker.png",
     category: "evo-guns",
   },
   {
@@ -97,36 +94,33 @@ const products = [
     name: "EVO UMP - Booyah Day",
     price: 3604.99,
     discount: 25,
-    image:
-      "ump.png",
+    image: "ump.png",
     category: "evo-guns",
   },
 
   // Clothing category
   {
     id: "c1",
-    name: "Elite Royal Bundle Set",
-    price: 24.99,
-    discount: 0,
-    image:
-      "https://via.placeholder.com/400x400/2ecc71/ffffff?text=Royal+Bundle",
+    name: "The Hip-Hop Bundle (male+female) both",
+    price: 3300,
+    discount: 23,
+    image: "hiphop.webp",
     category: "clothing",
   },
   {
     id: "c2",
-    name: "Street Punk Hoodie + Mask",
-    price: 18.99,
+    name: "Green Top Criminal Bundle",
+    price: 2000.99,
     discount: 20,
-    image: "https://via.placeholder.com/400x400/2ecc71/ffffff?text=Street+Punk",
+    image: "green.png",
     category: "clothing",
   },
   {
     id: "c3",
-    name: "Neon Samurai Outfit",
-    price: 29.99,
-    discount: 0,
-    image:
-      "https://via.placeholder.com/400x400/2ecc71/ffffff?text=Neon+Samurai",
+    name: "The Sakura Bundle (male+female) both",
+    price: 3600,
+    discount: 41,
+    image: "season.webp",
     category: "clothing",
   },
   {

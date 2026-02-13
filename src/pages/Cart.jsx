@@ -79,12 +79,12 @@ export default function Cart() {
               {cartItems.map((item) => {
                 const discountedUnitPrice =
                   item.discount > 0
-                    ? (item.price * (1 - item.discount / 100)).toFixed(2)
-                    : item.price.toFixed(2);
+                    ? (item.price * (1 - item.discount / 100)).toFixed(0)
+                    : item.price.toFixed(0);
 
                 const itemTotal = (
                   parseFloat(discountedUnitPrice) * item.quantity
-                ).toFixed(2);
+                ).toFixed(0);
 
                
                   // ---------------------
@@ -120,7 +120,7 @@ return (
               ৳{discountedUnitPrice}
             </span>
             <span className="text-sm sm:text-base text-gray-400 line-through">
-              ৳{item.price.toFixed(2)}
+              ৳{item.price.toFixed(0)}
             </span>
             <span className="text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
               -{item.discount}%
@@ -128,7 +128,7 @@ return (
           </>
         ) : (
           <span className="text-xl sm:text-2xl font-bold text-gray-900">
-            ৳{item.price.toFixed(2)}
+            ৳{item.price.toFixed(0)}
           </span>
         )}
       </div>

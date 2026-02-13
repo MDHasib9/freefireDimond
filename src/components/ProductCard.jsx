@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
   const { name, price, discount, image } = product;
 
   const discountedPrice = discount > 0
-    ? (price * (1 - discount / 100)).toFixed(2)
+    ? (price * (1 - discount / 100)).toFixed(0)
     : null;
 
   const handleAddToCart = () => {
@@ -51,12 +51,12 @@ export default function ProductCard({ product }) {
                 ৳{discountedPrice}
               </span>
               <span className="text-sm text-gray-500 line-through">
-                ৳{price.toFixed(2)}
+                ৳{price.toFixed(0)}
               </span>
             </>
           ) : (
             <span className="text-lg font-bold text-gray-900">
-              ৳{price.toFixed(2)}
+              ৳{price.toFixed(0)}
             </span>
           )}
         </div>

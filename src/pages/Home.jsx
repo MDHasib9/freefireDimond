@@ -79,69 +79,9 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featured.map((product) => (
-            <Link
-              key={product.id}
-              to={`/products/${product.id}`}
-              className="group bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              {/* Product Image */}
-              <div className="relative overflow-hidden h-60 bg-gradient-to-br from-gray-100 to-gray-200">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
 
-                {/* Discount Badge */}
-                {product.discount > 0 && (
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-gradient-to-r from-red-500 to-pink-600 text-white font-bold px-4 py-2 rounded-lg shadow-lg">
-                      -{product.discount}% OFF
-                    </span>
-                  </div>
-                )}
-              </div>
 
-              {/* Product Info */}
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-bold text-lg text-gray-900 line-clamp-1 group-hover:text-purple-600 transition-colors">
-                    {product.name}
-                  </h3>
-                  <span className="text-sm text-gray-500">
-                    {product.category}
-                  </span>
-                </div>
-
-                {/* Price */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl font-bold text-gray-900">
-                      ৳{product.price}
-                    </span>
-                    {product.discount > 0 && (
-                      <span className="text-sm text-gray-400 line-through">
-                        ৳
-                        {(product.price / (1 - product.discount / 100)).toFixed(
-                          2,
-                        )}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Quick Action */}
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100">
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Call to Action */}
+        
         <div className="text-center  mt-16">
           <Link
             to="/diamonds"
