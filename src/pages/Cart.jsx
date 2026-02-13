@@ -286,9 +286,9 @@ return (
 
                       <button
                         type="button"
-                        onClick={() => setPaymentMethod('nagad')}
+                        onClick={() => setPaymentMethod('Nagad')}
                         className={`flex items-center gap-3 border-2 rounded-2xl p-4 transition-all ${
-                          paymentMethod === 'nagad'
+                          paymentMethod === 'Nagad'
                             ? 'border-green-600 bg-green-50'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
@@ -318,7 +318,7 @@ return (
                   {/* Sender Phone */}
                   <div >
                     <label className="block text-sm font-medium  text-gray-700 mb-2">
-                      Your Phone Number (Sender)
+                      Your {paymentMethod } account Number (Sender)
                     </label>
                     <input
                       type="tel"
@@ -327,22 +327,44 @@ return (
                         const val = e.target.value.replace(/\D/g, '').slice(0, 11);
                         setSenderPhone(val);
                       }}
-                      placeholder="013XXXXXXXX"
+                      placeholder="আপনার মোবাইল নম্বর দিন"
                       className="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-primary text-lg font-medium"
                     />
                     <p className="text-xs text-gray-500 mt-1.5">11 digits starting with 01</p>
                   </div>
 
+                  {/* game uid  */}
+
+                       <div >
+                    <label className="block text-sm font-medium  text-gray-700 mb-2">
+                      Player ID/UID*
+                    </label>
+                    <input
+                      type="number"
+                      // value={senderPhone}
+                      // onChange={(e) => {
+                      //   const val = e.target.value.replace(/\D/g, '').slice(0, 11);
+                      //   setSenderPhone(val);
+                      // }}
+                      placeholder="গেমের Player ID/UID লিখুন"
+                      className="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-primary text-lg font-medium"
+                    />
+                    {/* <p className="text-xs text-gray-500 mt-1.5">11 digits starting with 01</p> */}
+                  </div>
+
+
+
+
                   {/* Transaction ID */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Transaction ID / Reference
+                     {paymentMethod}  Transaction ID 
                     </label>
                     <input
                       type="text"
                       value={transactionId}
                       onChange={(e) => setTransactionId(e.target.value.toUpperCase().trim())}
-                      placeholder="BK123456789012"
+                      placeholder="AD895PR505"
                       className="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-primary text-lg font-medium uppercase tracking-widest"
                     />
                   </div>

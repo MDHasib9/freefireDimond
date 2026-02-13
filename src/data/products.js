@@ -59,15 +59,15 @@ const products = [
   // Evo Guns category
   {
     id: "e1",
-    name: "EVO Blue Flame Draco AK. ",
+    name: "EVO Blue Flame Draco AK. (Max level)",
     price: 4050.99,
-    discount: 0,
+    discount: 10,
     image: "ak47image.jpg",
     category: "evo-guns",
   },
   {
     id: "e2",
-    name: "EVO GUN M1887- Sterling Conqueror",
+    name: "EVO GUN M1887- Sterling Conqueror (Max level)",
     price: 4900.99,
     discount: 20,
     image: "m1887.png",
@@ -75,23 +75,23 @@ const products = [
   },
   {
     id: "e3",
-    name: "EVO  MP40 - Predatory Cobra. ",
+    name: "EVO  MP40 - Predatory Cobra.  (Max level)",
     price: 4600.99,
-    discount: 0,
+    discount: 30,
     image: "mp40.png",
     category: "evo-guns",
   },
   {
     id: "e4",
-    name: "EVO AWM - Crystal Guardian",
+    name: "Woodpecker - Majestic Prowler (Max level)",
     price: 5709.99,
-    discount: 0,
+    discount: 30,
     image: "udpaker.png",
     category: "evo-guns",
   },
   {
     id: "e5",
-    name: "EVO UMP - Booyah Day",
+    name: "EVO UMP - Booyah Day  (Max level)",
     price: 3604.99,
     discount: 25,
     image: "ump.png",
@@ -125,29 +125,14 @@ const products = [
   },
   {
     id: "c4",
-    name: "Winter Phantom Jacket",
-    price: 22.99,
-    discount: 0,
+    name: "Angelic Pants  (male+female) both ",
+    price: 1000,
+    discount: 40,
     image:
-      "https://via.placeholder.com/400x400/2ecc71/ffffff?text=Winter+Phantom",
+      "anjelic.png",
     category: "clothing",
   },
-  {
-    id: "c5",
-    name: "Cyber Ninja Set (Full)",
-    price: 34.99,
-    discount: 15,
-    image: "https://via.placeholder.com/400x400/2ecc71/ffffff?text=Cyber+Ninja",
-    category: "clothing",
-  },
-  {
-    id: "c6",
-    name: "Golden VIP Cape + Crown",
-    price: 19.99,
-    discount: 0,
-    image: "https://via.placeholder.com/400x400/2ecc71/ffffff?text=Golden+VIP",
-    category: "clothing",
-  },
+
 ];
 
 export default products;
