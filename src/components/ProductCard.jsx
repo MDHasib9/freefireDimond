@@ -48,15 +48,15 @@ export default function ProductCard({ product }) {
           {discountedPrice ? (
             <>
               <span className="text-lg font-bold text-red-600">
-                ${discountedPrice}
+                ৳{discountedPrice}
               </span>
               <span className="text-sm text-gray-500 line-through">
-                ${price.toFixed(2)}
+                ৳{price.toFixed(2)}
               </span>
             </>
           ) : (
             <span className="text-lg font-bold text-gray-900">
-              ${price.toFixed(2)}
+              ৳{price.toFixed(2)}
             </span>
           )}
         </div>

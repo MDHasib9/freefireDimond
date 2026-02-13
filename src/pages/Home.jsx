@@ -119,11 +119,11 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl font-bold text-gray-900">
-                      ${product.price}
+                      ৳{product.price}
                     </span>
                     {product.discount > 0 && (
                       <span className="text-sm text-gray-400 line-through">
-                        $
+                        ৳
                         {(product.price / (1 - product.discount / 100)).toFixed(
                           2,
                         )}

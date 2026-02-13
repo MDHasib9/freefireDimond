@@ -117,10 +117,10 @@ return (
         {item.discount > 0 ? (
           <>
             <span className="text-xl sm:text-2xl font-bold text-gray-900">
-              ${discountedUnitPrice}
+              ৳{discountedUnitPrice}
             </span>
             <span className="text-sm sm:text-base text-gray-400 line-through">
-              ${item.price.toFixed(2)}
+              ৳{item.price.toFixed(2)}
             </span>
             <span className="text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
               -{item.discount}%
@@ -128,7 +128,7 @@ return (
           </>
         ) : (
           <span className="text-xl sm:text-2xl font-bold text-gray-900">
-            ${item.price.toFixed(2)}
+            ৳{item.price.toFixed(2)}
           </span>
         )}
       </div>
@@ -157,10 +157,10 @@ return (
         {/* Total */}
         <div className="text-right">
           <div className="font-semibold text-lg text-gray-900">
-            ${itemTotal}
+            ৳{itemTotal}
           </div>
           <div className="text-xs text-gray-500">
-            {item.quantity} × ${discountedUnitPrice}
+            {item.quantity} × ৳{discountedUnitPrice}
           </div>
         </div>
       </div>
@@ -190,10 +190,10 @@ return (
       {/* Total */}
       <div className="text-right mt-4">
         <div className="font-semibold text-xl text-gray-900">
-          ${itemTotal}
+          ৳{itemTotal}
         </div>
         <div className="text-xs text-gray-500">
-          {item.quantity} × ${discountedUnitPrice}
+          {item.quantity} × ৳{discountedUnitPrice}
         </div>
       </div>
 
@@ -239,19 +239,19 @@ return (
               <div className="space-y-5   ">
                 <div className="flex justify-between text-gray-600">
                   <span>Subtotal</span>
-                  <span className="font-medium">${subtotal}</span>
+                  <span className="font-medium">৳{subtotal}</span>
                 </div>
 
                 {totalDiscount > 0 && (
                   <div className="flex justify-between text-green-600">
                     <span>You save</span>
-                    <span className="font-medium">-${totalDiscount}</span>
+                    <span className="font-medium">-৳{totalDiscount}</span>
                   </div>
                 )}
 
                 <div className="pt-5 border-t border-gray-200 flex justify-between items-end text-3xl font-bold text-gray-900">
                   <span>Total</span>
-                  <span>${total}</span>
+                  <span>৳{total}</span>
                 </div>
               </div>
 
