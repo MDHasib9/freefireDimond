@@ -1,7 +1,7 @@
 // src/pages/Cart.jsx
-import { useCart } from '../context/CartContext';
-import { useNavigate, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useCart } from "../context/CartContext";
+import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Cart() {
   const {
@@ -18,12 +18,12 @@ export default function Cart() {
   const navigate = useNavigate();
 
   // Payment form state
-  const [paymentMethod, setPaymentMethod] = useState('bKash');
-  const [senderPhone, setSenderPhone] = useState('');
-  const [transactionId, setTransactionId] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState("bKash");
+  const [senderPhone, setSenderPhone] = useState("");
+  const [transactionId, setTransactionId] = useState("");
 
-  const bKashNumber = '017600 96087';
-  const nagadNumber = '017600 96087';
+  const bKashNumber = "017600 96087";
+  const nagadNumber = "017600 96087";
 
   // Form validation
   const isFormValid =
@@ -33,25 +33,25 @@ export default function Cart() {
 
   const handleCompleteOrder = () => {
     if (!isFormValid) {
-      alert('Please fill all payment details correctly.');
+      alert("Please fill all payment details correctly.");
       return;
     }
 
     if (cartItems.length === 0) {
-      alert('Your cart is empty!');
+      alert("Your cart is empty!");
       return;
     }
 
     // Success
     alert(
       `✅ Order placed successfully!\n` +
-      `Payment Method: ${paymentMethod.toUpperCase()}\n` +
-      `Transaction ID: ${transactionId}\n\n` +
-      `Thank you for shopping at Free Fire Store!`
+        `Payment Method: ${paymentMethod.toUpperCase()}\n` +
+        `Transaction ID: ${transactionId}\n\n` +
+        `Thank you for shopping at Free Fire Store!`,
     );
 
     clearCart();
-    navigate('/success');
+    navigate("/success");
   };
 
   return (
@@ -63,7 +63,9 @@ export default function Cart() {
           <div className="mx-auto w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center mb-6">
             🛒
           </div>
-          <p className="text-lg text-gray-200 mb-8">Your shopping cart is empty</p>
+          <p className="text-lg text-gray-200 mb-8">
+            Your shopping cart is empty
+          </p>
           <Link
             to="/diamonds"
             className="inline-block bg-primary bg-[#7851A9] text-white hover: text-primary-foreground px-10 py-3.5 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
@@ -86,147 +88,126 @@ export default function Cart() {
                   parseFloat(discountedUnitPrice) * item.quantity
                 ).toFixed(0);
 
-               
-                  // ---------------------
+                // ---------------------
 
+                return (
+                  <div
+                    key={item.id}
+                    className="flex flex-col sm:flex-row gap-6 p-5 sm:p-6 border-b border-gray-200 last:border-0 bg-white hover:bg-gray-50 transition"
+                  >
+                    {/* Image */}
+                    <div className="w-full sm:w-28 h-40 sm:h-28 flex-shrink-0 overflow-hidden rounded-2xl border">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
 
+                    {/* Middle Section */}
+                    <div className="flex-1 flex flex-col justify-between">
+                      {/* Title */}
+                      <h3 className="font-semibold text-base sm:text-lg text-gray-900 line-clamp-2">
+                        {item.name}
+                      </h3>
 
-return (
-  <div
-    key={item.id}
-    className="flex flex-col sm:flex-row gap-6 p-5 sm:p-6 border-b border-gray-200 last:border-0 bg-white hover:bg-gray-50 transition"
-  >
-    {/* Image */}
-    <div className="w-full sm:w-28 h-40 sm:h-28 flex-shrink-0 overflow-hidden rounded-2xl border">
-      <img
-        src={item.image}
-        alt={item.name}
-        className="h-full w-full object-cover"
-      />
-    </div>
+                      {/* Price */}
+                      <div className="flex flex-wrap items-center gap-3 mt-3">
+                        {item.discount > 0 ? (
+                          <>
+                            <span className="text-xl sm:text-2xl font-bold text-gray-900">
+                              ৳{discountedUnitPrice}
+                            </span>
+                            <span className="text-sm sm:text-base text-gray-400 line-through">
+                              ৳{item.price.toFixed(0)}
+                            </span>
+                            <span className="text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
+                              -{item.discount}%
+                            </span>
+                          </>
+                        ) : (
+                          <span className="text-xl sm:text-2xl font-bold text-gray-900">
+                            ৳{item.price.toFixed(0)}
+                          </span>
+                        )}
+                      </div>
 
-    {/* Middle Section */}
-    <div className="flex-1 flex flex-col justify-between">
-      {/* Title */}
-      <h3 className="font-semibold text-base sm:text-lg text-gray-900 line-clamp-2">
-        {item.name}
-      </h3>
+                      {/* Mobile Bottom Section */}
+                      <div className="flex items-center justify-between mt-4 sm:hidden">
+                        {/* Quantity */}
+                        <div className="border border-gray-300 rounded-xl flex items-center overflow-hidden">
+                          <button
+                            onClick={() => decreaseQuantity(item.id)}
+                            className="w-9 h-9 flex items-center justify-center text-lg text-gray-600 hover:bg-gray-100"
+                          >
+                            −
+                          </button>
+                          <div className="w-10 text-center font-semibold text-base border-x border-gray-300">
+                            {item.quantity}
+                          </div>
+                          <button
+                            onClick={() => increaseQuantity(item.id)}
+                            className="w-9 h-9 flex items-center justify-center text-lg text-gray-600 hover:bg-gray-100"
+                          >
+                            +
+                          </button>
+                        </div>
 
-      {/* Price */}
-      <div className="flex flex-wrap items-center gap-3 mt-3">
-        {item.discount > 0 ? (
-          <>
-            <span className="text-xl sm:text-2xl font-bold text-gray-900">
-              ৳{discountedUnitPrice}
-            </span>
-            <span className="text-sm sm:text-base text-gray-400 line-through">
-              ৳{item.price.toFixed(0)}
-            </span>
-            <span className="text-xs bg-red-600 text-white px-2 py-1 rounded-full font-semibold">
-              -{item.discount}%
-            </span>
-          </>
-        ) : (
-          <span className="text-xl sm:text-2xl font-bold text-gray-900">
-            ৳{item.price.toFixed(0)}
-          </span>
-        )}
-      </div>
+                        {/* Total */}
+                        <div className="text-right">
+                          <div className="font-semibold text-lg text-gray-900">
+                            ৳{itemTotal}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            {item.quantity} × ৳{discountedUnitPrice}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-      {/* Mobile Bottom Section */}
-      <div className="flex items-center justify-between mt-4 sm:hidden">
-        {/* Quantity */}
-        <div className="border border-gray-300 rounded-xl flex items-center overflow-hidden">
-          <button
-            onClick={() => decreaseQuantity(item.id)}
-            className="w-9 h-9 flex items-center justify-center text-lg text-gray-600 hover:bg-gray-100"
-          >
-            −
-          </button>
-          <div className="w-10 text-center font-semibold text-base border-x border-gray-300">
-            {item.quantity}
-          </div>
-          <button
-            onClick={() => increaseQuantity(item.id)}
-            className="w-9 h-9 flex items-center justify-center text-lg text-gray-600 hover:bg-gray-100"
-          >
-            +
-          </button>
-        </div>
+                    {/* Desktop Right Section */}
+                    <div className="hidden sm:flex flex-col items-end justify-between">
+                      {/* Quantity */}
+                      <div className="border border-gray-300 rounded-xl flex items-center overflow-hidden">
+                        <button
+                          onClick={() => decreaseQuantity(item.id)}
+                          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
+                        >
+                          −
+                        </button>
+                        <div className="w-12 text-center font-semibold text-lg border-x border-gray-300">
+                          {item.quantity}
+                        </div>
+                        <button
+                          onClick={() => increaseQuantity(item.id)}
+                          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
+                        >
+                          +
+                        </button>
+                      </div>
 
-        {/* Total */}
-        <div className="text-right">
-          <div className="font-semibold text-lg text-gray-900">
-            ৳{itemTotal}
-          </div>
-          <div className="text-xs text-gray-500">
-            {item.quantity} × ৳{discountedUnitPrice}
-          </div>
-        </div>
-      </div>
-    </div>
+                      {/* Total */}
+                      <div className="text-right mt-4">
+                        <div className="font-semibold text-xl text-gray-900">
+                          ৳{itemTotal}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {item.quantity} × ৳{discountedUnitPrice}
+                        </div>
+                      </div>
 
-    {/* Desktop Right Section */}
-    <div className="hidden sm:flex flex-col items-end justify-between">
-      {/* Quantity */}
-      <div className="border border-gray-300 rounded-xl flex items-center overflow-hidden">
-        <button
-          onClick={() => decreaseQuantity(item.id)}
-          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
-        >
-          −
-        </button>
-        <div className="w-12 text-center font-semibold text-lg border-x border-gray-300">
-          {item.quantity}
-        </div>
-        <button
-          onClick={() => increaseQuantity(item.id)}
-          className="w-10 h-10 flex items-center justify-center text-xl text-gray-600 hover:bg-gray-100"
-        >
-          +
-        </button>
-      </div>
+                      {/* Remove */}
+                      <button
+                        onClick={() => removeFromCart(item.id)}
+                        className="text-sm font-medium text-gray-500 hover:text-red-600 transition mt-4"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                );
 
-      {/* Total */}
-      <div className="text-right mt-4">
-        <div className="font-semibold text-xl text-gray-900">
-          ৳{itemTotal}
-        </div>
-        <div className="text-xs text-gray-500">
-          {item.quantity} × ৳{discountedUnitPrice}
-        </div>
-      </div>
-
-      {/* Remove */}
-      <button
-        onClick={() => removeFromCart(item.id)}
-        className="text-sm font-medium text-gray-500 hover:text-red-600 transition mt-4"
-      >
-        Remove
-      </button>
-    </div>
-  </div>
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      //  --------------------------------------------- 
-
+                //  ---------------------------------------------
               })}
             </div>
           </div>
@@ -263,40 +244,56 @@ return (
 
                 <div className="space-y-6">
                   {/* Payment Method */}
-                  <div className='' >
+                  <div className="">
                     <p className="text-sm font-medium text-gray-700 mb-3">
                       Choose Payment Method
                     </p>
                     <div className="grid grid-cols-2 gap-3">
                       <button
                         type="button"
-                        onClick={() => setPaymentMethod('bKash')}
+                        onClick={() => setPaymentMethod("bKash")}
                         className={`flex items-center gap-3 border-2 rounded-2xl p-4 transition-all ${
-                          paymentMethod === 'bKash'
-                            ? 'border-green-600 bg-green-50'
-                            : 'border-gray-200 hover:border-gray-300'
+                          paymentMethod === "bKash"
+                            ? "border-green-600 bg-green-50"
+                            : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
-                        <span className="text-4xl"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_-MTKeBKVsB2RoYcbrm3OCwVSK_8Ux0bOzg&s" alt="" /></span>
+                        <span className="text-4xl">
+                          {" "}
+                          <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_-MTKeBKVsB2RoYcbrm3OCwVSK_8Ux0bOzg&s"
+                            alt=""
+                          />
+                        </span>
                         <div className="text-left">
                           <div className="font-semibold">bKash</div>
-                          <div className="text-xs text-gray-500">Mobile Banking</div>
+                          <div className="text-xs text-gray-500">
+                            Mobile Banking
+                          </div>
                         </div>
                       </button>
 
                       <button
                         type="button"
-                        onClick={() => setPaymentMethod('Nagad')}
+                        onClick={() => setPaymentMethod("Nagad")}
                         className={`flex items-center gap-3 border-2 rounded-2xl p-4 transition-all ${
-                          paymentMethod === 'Nagad'
-                            ? 'border-green-600 bg-green-50'
-                            : 'border-gray-200 hover:border-gray-300'
+                          paymentMethod === "Nagad"
+                            ? "border-green-600 bg-green-50"
+                            : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
-                        <span className="text-4xl">  <img src="https://freelogopng.com/images/all_img/1679248787Nagad-Logo.png" alt="" /> </span>
+                        <span className="text-4xl">
+                          {" "}
+                          <img
+                            src="https://freelogopng.com/images/all_img/1679248787Nagad-Logo.png"
+                            alt=""
+                          />{" "}
+                        </span>
                         <div className="text-left">
                           <div className="font-semibold">Nagad</div>
-                          <div className="text-xs text-gray-500">Mobile Banking</div>
+                          <div className="text-xs text-gray-500">
+                            Mobile Banking
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -307,35 +304,61 @@ return (
                     <div className="uppercase text-[10px] tracking-widest text-green-700 font-bold mb-1">
                       SEND MONEY TO
                     </div>
-                    <div className="font-mono text-3xl font-bold text-green-800">
-                      {paymentMethod === 'bKash' ? bKashNumber : nagadNumber}
+                    <div className="flex items-center gap-3">
+                      <div className="font-mono text-xl sm:text-3xl font-bold text-green-800">
+                        {paymentMethod === "bKash" ? bKashNumber : nagadNumber}
+                      </div>
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            paymentMethod === "bKash"
+                              ? bKashNumber
+                              : nagadNumber,
+                          );
+                          // Show copied message
+                          const btn = document.activeElement;
+                          const originalText = btn.textContent;
+                          btn.textContent = "Copied!";
+                          setTimeout(() => {
+                            btn.textContent = originalText;
+                          }, 2000);
+                        }}
+                        className="px-3 py-1.5 text-xs font-medium text-green-700 bg-green-100 hover:bg-green-200 rounded-lg transition-colors"
+                      >
+                        Copy
+                      </button>
                     </div>
                     <div className="text-green-600 text-sm mt-1">
-                      {paymentMethod === 'bKash' ? 'bKash' : 'Nagad'} Personal Account
+                      {paymentMethod === "bKash" ? "bKash" : "Nagad"} Personal
+                      Account
                     </div>
                   </div>
 
                   {/* Sender Phone */}
-                  <div >
+                  <div>
                     <label className="block text-sm font-medium  text-gray-700 mb-2">
-                      Your {paymentMethod } account Number (Sender)
+                      Your {paymentMethod} account Number (Sender)
                     </label>
                     <input
                       type="tel"
                       value={senderPhone}
                       onChange={(e) => {
-                        const val = e.target.value.replace(/\D/g, '').slice(0, 11);
+                        const val = e.target.value
+                          .replace(/\D/g, "")
+                          .slice(0, 11);
                         setSenderPhone(val);
                       }}
                       placeholder="আপনার মোবাইল নম্বর দিন"
                       className="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-primary text-lg font-medium"
                     />
-                    <p className="text-xs text-gray-500 mt-1.5">11 digits starting with 01</p>
+                    <p className="text-xs text-gray-500 mt-1.5">
+                      11 digits starting with 01
+                    </p>
                   </div>
 
                   {/* game uid  */}
 
-                       <div >
+                  <div>
                     <label className="block text-sm font-medium  text-gray-700 mb-2">
                       Player ID/UID*
                     </label>
@@ -352,18 +375,17 @@ return (
                     {/* <p className="text-xs text-gray-500 mt-1.5">11 digits starting with 01</p> */}
                   </div>
 
-
-
-
                   {/* Transaction ID */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                     {paymentMethod}  Transaction ID 
+                      {paymentMethod} Transaction ID
                     </label>
                     <input
                       type="text"
                       value={transactionId}
-                      onChange={(e) => setTransactionId(e.target.value.toUpperCase().trim())}
+                      onChange={(e) =>
+                        setTransactionId(e.target.value.toUpperCase().trim())
+                      }
                       placeholder="AD895PR505"
                       className="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-primary text-lg font-medium uppercase tracking-widest"
                     />
@@ -377,8 +399,8 @@ return (
                 disabled={!isFormValid}
                 className={`mt-10 w-full py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3 transition-all ${
                   isFormValid
-                    ? 'bg-green-600 hover:bg-green-700 text-white active:scale-95'
-                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    ? "bg-green-600 hover:bg-green-700 text-white active:scale-95"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
               >
                 <span>✅ Complete Order</span>
