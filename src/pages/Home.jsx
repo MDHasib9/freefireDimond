@@ -6,13 +6,13 @@ export default function Home() {
   const featured = products.slice(0, 6);
 
   return (
-    <div className="min-h-screen  ">
+    <div className="min-h-screen overflow-hidden z-10 ">
       {/* Hero Section - Improved */}
       <section
         className="h-screen w-full bg-cover bg-center bg-no-repeat  flex items-center justify-center"
         style={{ backgroundImage: `url('homeimage.jpg')` }}
       >
-        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="container relative mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-black tracking-tight text-center relative">
@@ -84,7 +84,7 @@ export default function Home() {
             <Link
               key={product.id}
               to={`/products/${product.id}`}
-              className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              className="group bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Product Image */}
               <div className="relative overflow-hidden h-60 bg-gradient-to-br from-gray-100 to-gray-200">

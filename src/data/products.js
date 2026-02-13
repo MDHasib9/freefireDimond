@@ -59,7 +59,7 @@ const products = [
   // Evo Guns category
   {
     id: "e1",
-    name: "Legendary Evo Gun Skin - Dragon Blaze",
+    name: "EVO Blue Flame Draco AK. ",
     price: 4050.99,
     discount: 0,
     image: "ak47image.jpg",
@@ -67,7 +67,7 @@ const products = [
   },
   {
     id: "e2",
-    name: "Evo M1887 - Galactic Storm",
+    name: "EVO GUN M1887- Sterling Conqueror",
     price: 4900.99,
     discount: 20,
     image:
@@ -76,7 +76,7 @@ const products = [
   },
   {
     id: "e3",
-    name: "Evo Groza - Neon Phantom",
+    name: "EVO  MP40 - Predatory Cobra. ",
     price: 4600.99,
     discount: 0,
     image:
@@ -85,7 +85,7 @@ const products = [
   },
   {
     id: "e4",
-    name: "Evo AWM - Crystal Guardian",
+    name: "EVO AWM - Crystal Guardian",
     price: 5709.99,
     discount: 0,
     image:
@@ -94,7 +94,7 @@ const products = [
   },
   {
     id: "e5",
-    name: "Evo MP40 - Cyberpunk Edge",
+    name: "EVO UMP - Booyah Day",
     price: 3604.99,
     discount: 25,
     image:
